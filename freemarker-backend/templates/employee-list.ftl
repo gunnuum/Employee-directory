@@ -9,7 +9,7 @@
 <body>
   <h1>Employee Directory</h1>
 
- # <!-- Top bar: Add + Search + Filter -->
+  <!-- Top bar: Add + Search + Filter -->
   <div class="search-bar-container">
     <input type="text" id="searchBar" placeholder="Search by name or email" />
     <button id="filterToggle" class="filter-btn">⚙️ Filters</button>
@@ -17,12 +17,12 @@
   </div>
 
 
-#<!-- 🔲 Sidebar Filter Panel -->
+<!-- 🔲 Sidebar Filter Panel -->
 <div id="filterSidebar" class="filter-sidebar">
   <h3>Filter Employees</h3>
 
   <label for="firstNameFilter">First Name:</label>
-  <input type="text" id="firstNameFilter" placeholder="e.g. Gunjan" />
+  <input type="text" id="firstNameFilter" placeholder="" />
 
   <label for="departmentFilter">Department:</label>
   <select id="departmentFilter">
@@ -45,7 +45,7 @@
   <button id="applyFilters">Apply</button>
   <button id="clearFilters" class="clear-btn">Clear</button>
 </div>
-  #<!-- Employee Cards -->
+  <!-- Employee Cards -->
   <div id="employeeList">
     <#list employees as emp>
       <div class="employee-card">
