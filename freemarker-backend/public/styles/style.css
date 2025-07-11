@@ -187,3 +187,87 @@ form button:hover {
 .back-link:hover {
   text-decoration: underline;
 }
+.filter-toggle {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.filter-sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.filter-sidebar.visible {
+  transform: translateX(0);
+}
+
+.hidden {
+  display: none;
+}
+.filter-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; 
+}
+
+.filter-sidebar label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.filter-sidebar input,
+.filter-sidebar select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.filter-sidebar button {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#applyFilters {
+  background-color: #3498db;
+  color: white;
+}
+
+#applyFilters:hover {
+  background-color: #2980b9;
+}
+
+#clearFilters {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#clearFilters:hover {
+  background-color: #c0392b;
+}
+

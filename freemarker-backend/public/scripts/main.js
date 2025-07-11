@@ -1,13 +1,13 @@
-console.log("JS loaded ✅");
+console.log("JS loaded ");
 
 document.addEventListener("DOMContentLoaded", () => {
   const listContainer = document.getElementById("employeeList");
 
-  // Step 1: Wait a bit to ensure FTL-rendered employees load
+  //   to ensure FTL-rendered employees load
   setTimeout(() => {
     const stored = JSON.parse(localStorage.getItem("newEmployees")) || [];
 
-    // Step 2: Add localStorage employees to list
+    //  Add localStorage employees to list
     stored.forEach((emp) => {
       const div = document.createElement("div");
       div.className = "employee-card";
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       listContainer.appendChild(div);
     });
 
-    // Step 3: Activate edit/delete for all cards
+    //   edit/delete for all cards
     document.querySelectorAll(".edit-btn").forEach((btn) =>
       btn.addEventListener("click", (e) => {
         const id = e.target.getAttribute("data-id");
@@ -50,13 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
 
-    // Step 4: Populate filter dropdowns
+    //  Populate filter dropdowns
     extractUniqueFields();
 
-    // Step 5: Setup filters
-    document.getElementById("filterToggle")?.addEventListener("click", () => {
-      document.getElementById("filterPanel").classList.toggle("hidden");
-    });
+    // Setup filters
+   document.getElementById("filterToggle")?.addEventListener("click", () => {
+  const sidebar = document.getElementById("filterSidebar");
+  sidebar.classList.toggle("visible");
+});
 
     document.getElementById("applyFilters")?.addEventListener("click", filterEmployees);
     document.getElementById("clearFilters")?.addEventListener("click", () => {

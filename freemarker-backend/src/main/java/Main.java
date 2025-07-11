@@ -1,16 +1,24 @@
+import java.io.File;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import freemarker.template.*;
-import java.io.*;
-import java.util.*;
-import static spark.Spark.*;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import static spark.Spark.get;
+import static spark.Spark.port;
+import static spark.Spark.staticFiles;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         port(4567); // or any port you prefer
         staticFiles.externalLocation("public");
 
-        get("/hello", (req, res) -> "Hello from server!"); // ✅ test route
+        get("/hello", (req, res) -> "Hello from server!"); 
 
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         cfg.setDirectoryForTemplateLoading(new File("templates"));
