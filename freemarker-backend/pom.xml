@@ -16,13 +16,11 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.32</version>
         </dependency>
-
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>
             <version>2.9.4</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -32,17 +30,13 @@
 
     <build>
         <plugins>
+            <!-- For running the app with mvn exec:java -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>Main</mainClass>
-                        </manifest>
-                    </archive>
+                    <mainClass>Main</mainClass> <!-- Replace with your full class name if package exists -->
                 </configuration>
             </plugin>
         </plugins>
